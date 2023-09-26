@@ -1,0 +1,66 @@
+h1{
+    text-align: center;
+   color: #0056b3;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f9fc;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50cap;
+}
+
+
+table.styled-table {
+    border-collapse: collapse;
+    width: 175%;
+    margin: auto;
+    align-items: center;
+    background-color: #ff9900; 
+    /* Orange background for the table */
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+div.button-container {
+    text-align: center;
+}
+
+input.styled-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* Blue background for buttons */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+input.styled-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
