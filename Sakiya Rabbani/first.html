@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty Information Form</title>
+ <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    
+    <form action="submit_form.php" method="post">
+        <h1>Faculty Information Form</h1>
+        <table  class="styled-table">
+            <tr>
+                <th>Name of the Faculty:</th>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <th>Designation:</th>
+                <td><input type="text" name="designation" required></td>
+            </tr>
+            <tr>
+                <th>Department:</th>
+                <td><input type="text" name="department" required></td>
+            </tr>
+            <tr>
+                <th>Highest Qualification:</th>
+                <td><input type="text" name="qualification" required></td>
+            </tr>
+            <tr>
+                <th>Date of Birth (DD / MM / YYYY):</th>
+                <td><input type="date" name="dob" required></td>
+            </tr>
+            <tr>
+                <th>Date of Joining in SRIT:</th>
+                <td><input type="date" name="date_of_joining" required></td>
+            </tr>
+            <tr>
+                <th>PhD:</th>
+                <td>
+                    <select name="phd_status" required>
+                        <option value="Completed">Completed</option>
+                        <option value="Registered">Registered</option>
+                        <option value="Not Registered">Not Registered</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Area of Specialization:</th>
+                <td><input type="text" name="specialization" required></td>
+            </tr>
+            <tr>
+                <th>Caste:</th>
+                <td>
+                    <select name="caste" required>
+                        <option value="OC">OC</option>
+                        <option value="BC">BC</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Salary at the Time of Joining:</th>
+                <td><input type="number" name="joining_salary" required></td>
+            </tr>
+            <tr>
+                <th>Present Salary:</th>
+                <td><input type="number" name="present_salary" required></td>
+            </tr>
+            <tr>
+                <th>Married:</th>
+                <td>
+                    <input type="radio" name="marital_status" value="Yes" required> Yes
+                    <input type="radio" name="marital_status" value="No" required> No
+                </td>
+            </tr>
+            <tr>
+                <th>Mobile Number:</th>
+                <td><input type="tel" name="mobile" required></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>Aadhaar Number:</th>
+                <td><input type="text" name="aadhaar" required></td>
+            </tr>
+            <tr>
+                <th>PAN Number:</th>
+                <td><input type="text" name="pan" required></td>
+            </tr>
+            <tr>
+                <th>Google Scholar link:</th>
+                <td><input type="url" name="google_scholar"></td>
+            </tr>
+        </table>
+        <div class="button-container">
+            <input type="submit" class="styled-button" value="Submit">
+            <input type="submit" class="styled-button" value="Next Page">
+        </div>
+    </form>
+</body>
+</html>
