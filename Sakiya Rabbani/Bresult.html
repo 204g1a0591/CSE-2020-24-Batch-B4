@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching & Learning Process Score</title>
+    <link rel="stylesheet" type="text/css" href="C.css">
+</head>
+<body>
+    <h1> Score for Teaching & Learning Process Score</h1>
+
+    <form action="submit_scores.php" method="post">
+       <table border=1 align="center">
+        <tr>
+            <th>#</th>
+            <th>Section</th>
+            <th>Maximum API score</th>
+            <th>Score</th>
+        <th>Verified API Score</th>
+        </tr>
+        <!-- Section 1.1: Teaching Process -->
+        <tr>
+        <td>1.1</td>
+        <td> <label for="teaching_process">Teaching Process</label></td>
+        <td>25</td>
+        <td><input type="number" id="teaching_process" name="teaching_process" min="0" max="25" required><br></td>
+        <td><input type="number"></td>
+        </tr>
+        <!-- Section 1.2: Student Feedback -->
+        <tr>
+            <td>1.2</td>
+        <td><label for="student_feedback">Student Feedback</label></td>
+        <td>25</td>
+        <td><input type="number" id="student_feedback" name="student_feedback" min="0" max="25" required><br></td>
+        <td><input type="number"></td>
+        <tr>
+            <td>1.3</td>
+        <td> <label for="results">Results</label></td>
+        <td>25</td>
+        <td><input type="number" id="results" name="results" min="0" max="25" required><br></td>
+        <td><input type="number"></td>
+        </tr>
+        <!-- Section 1.4: Innovative Teaching Methodology -->
+        <tr>
+            <td>1.4</td>
+        <td><label for="innovative_teaching">Innovative Teaching Methodology</label></td>
+        <td>25</td>
+        <td><input type="number" id="innovative_teaching" name="innovative_teaching" min="0" max="25" required><br></td>
+        <td><input type="number"></td>
+        </tr>
+        <!-- Section 1.5: Content beyond the syllabus -->
+        <tr>
+            <td>1.5</td>
+        <td><label for="content_beyond_syllabus">Content beyond the syllabus</label></td>
+        <td>25</td>
+        <td><input type="number" id="content_beyond_syllabus" name="content_beyond_syllabus" min="0" max="25" required><br></td>
+        <td><input type="number"></td>
+        </tr>
+        <!-- Section 1.6: e-content developed -->
+        <tr>
+            <td>1.6</td>
+        <td><label for="e_content">e-content developed</label></td>
+        <td>25</td>
+        <td><input type="number" id="e_content" name="e_content" min="0" max="25" required><br></td>
+        
+        <td><input type="number"></td>
+        </tr>
+        <!-- Section 1.7: Course Files -->
+        <tr>
+        <td>1.7</td>
+        <td><label for="course_files">Course Files</label></td>
+        <td>50</td>
+        <td><input type="number" id="course_files" name="course_files" min="0" max="50" required><br></td>
+        <td><input type="number"></td>
+        <br>
+<tr>
+    <td colspan="2"><b>Total</b></td>
+    <td>200</td>
+    <td><input type="number"></td>
+    <div id ="result"></div>
+</tr>
+</table>
+<div align="center">
+<button>Submit</button>
+        <button >NextPage</button>
+    </div>
+    </form>
+</body>
+</html>
