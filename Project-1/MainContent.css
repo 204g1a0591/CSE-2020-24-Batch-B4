@@ -1,0 +1,34 @@
+/* MainContent.css */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add styles for your main content, e.g., background color, padding, etc. */
+  }
+  
+  .dropdown-buttons {
+    display: flex;
+    /* Add styles for your dropdown buttons, e.g., width, padding, and margin */
+  }
+  
+  .form {
+    /* Add styles for your form, e.g., display: none initially, width, padding, etc. */
+  }
+/* MainContent.css */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add styles for your main content, e.g., background color, padding, etc. */
+  }
+  
+  .dropdown-buttons {
+    display: flex;
+    /* Add styles for your dropdown buttons, e.g., width, padding, and margin */
+  }
+  
+  .form {
+    display: grid;
+    /* Add styles for your form, e.g., display: none initially, width, padding, etc. */
+  }
+    

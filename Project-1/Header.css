@@ -1,0 +1,32 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; /* Set your desired background color */
+    color: white; /* Set your desired text color */
+    padding: 10px;
+    height: 40px;
+  }
+  
+  .side-menu-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .logo {
+    height: 40px;
+    
+    /* Add styles for your logo, e.g., width, height, and padding */
+  }
+  
+  .profile-icon {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  
