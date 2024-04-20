@@ -1,48 +1,115 @@
-import { facultyScores } from "../models/facultyscores.js";
-import { Router } from "express";
+import { db } from "../db.js";
+import { DataTypes } from "sequelize";
 
-export const facultyScoresRouter = Router();
-
-facultyScoresRouter.post("/", async (req, res) => {
-  try {
-    const existingScores = await facultyScores.findOne({
-      where: {
-        facultyId: req.body.facultyId,
-      },
-    });
-    if (existingScores) {
-      res.status(400).send({ msg: "scores already exists on that faculty id" });
-    } else {
-      await facultyScores.create(req.body);
-      res.status(200).send({ msg: "faculty scores created" });
-    }
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
+export const facultyScores = db.define("faculty_scores", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  teachingProcess: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  studentFeedback: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  results: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  innovativeTeachingmethodology: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  contentbeyondthesyllabus: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  e_contentdeveloped: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  coursefiles: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  certificationCourses: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  detailsofFacultyDevelopmentProgram: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  additionalActivity: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  facultyExchange: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  publicationofJournals: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  projectGuidence: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  patents: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  funding: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  consultancy: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  feedback: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  total1: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  total2: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  tatal3: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0,
+  },
+  facultyId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
-
-facultyScoresRouter.get("/:id", async (req, res) => {
-  try {
-    const scores = await facultyScores.findOne({
-      where: {
-        facultyId: req.params.id,
-      },
-    });
-    res.status(200).send(scores);
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
-
-facultyScoresRouter.patch("/:id", async (req, res) => {
-  try {
-    await facultyScores.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.send({msg:"updated successfully"})
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
+// facultyScores.sync({ alter: true });

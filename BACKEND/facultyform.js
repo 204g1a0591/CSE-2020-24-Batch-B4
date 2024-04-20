@@ -1,82 +1,193 @@
-import { facultyForm } from "../models/facultyform.js";
-import { Router } from "express";
-export const facultyFormRouter = Router();
-
-facultyFormRouter.post("/", async (req, res) => {
-  try {
-    let body=req.body;
-    body.qualification=JSON.stringify(body.qualification);
-    body.experiancedetails=JSON.stringify(body.experiancedetails);
-    body.teachingprocess=JSON.stringify(body.teachingprocess);
-    body.studentfeedback=JSON.stringify(body.studentfeedback);
-    body.results=JSON.stringify(body.results);
-    body.Innovativeteachingmethodology=JSON.stringify(body.Innovativeteachingmethodology);
-    body.contentbeyondsyllabus=JSON.stringify(body.contentbeyondsyllabus);
-    body.e_contentdeveloped=JSON.stringify(body.e_contentdeveloped);
-    body.coursefiles=JSON.stringify(body.coursefiles);
-    body.cirtificationcourcesbyfaculty=JSON.stringify(body.cirtificationcourcesbyfaculty);
-    body.detailsoffacultydevelopmentprogram=JSON.stringify(body.detailsoffacultydevelopmentprogram);
-    body.additionalactivity=JSON.stringify(body.additionalactivity);
-    body.facultyexchange=JSON.stringify(body.facultyexchange);
-    body.publication_of_Journals=JSON.stringify(body.publication_of_Journals);
-    body.projectguidence=JSON.stringify(body.projectguidence);
-    body.patents=JSON.stringify(body.patents);
-    body.funding=JSON.stringify(body.funding);
-    body.consultancy=JSON.stringify(body.consultancy);
-
-    const existingForm = await facultyForm.findOne({
-      where: {
-        facultyId: req.body.facultyId,
-      },
-    });
-    if (existingForm) {
-      res
-        .status(400)
-        .send({ msg: "form already submitted on that faculty id" });
-    } else {
-      await facultyForm.create(req.body);
-      res.status(200).send({ msg: "form submitted successfully" });
-    }
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
+import { db } from "../db.js";
+import { DataTypes } from "sequelize";
+import { facultyRegistration } from "./registration.js";
+export const facultyForm = db.define("faculty_forms", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  designation: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  department: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  highestQualification: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  dob: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  dateofjoining: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  phd: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  specialization: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  caste: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  salary: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  married: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  mobile: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  aadhar: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  pan: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  googleScholarlink: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  orcid: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  qualification: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  rakedawardsprices: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+    defaultValue: null,
+  },
+  experiance: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  experiancedetails: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  teachingprocess: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  studentfeedback: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  results: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  Innovativeteachingmethodology: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  contentbeyondsyllabus: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  e_contentdeveloped: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  coursefiles: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  cirtificationcourcesbyfaculty: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  detailsoffacultydevelopmentprogram: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  additionalactivity: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  facultyexchange: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  publication_of_Journals: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  projectguidence: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  patents: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  funding: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  consultancy: {
+    type: DataTypes.JSON,
+    allowNull: true,
+    defaultValue: null,
+  },
+  feedbackfrompeers: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  facultyId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
-
-facultyFormRouter.get("/", async (req, res) => {
-  try {
-    const forms = await facultyForm.findAll();
-    res.status(200).send(forms);
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
-
-facultyFormRouter.get("/:id", async (req, res) => {
-  try {
-    const form = await facultyForm.findOne({
-      where: {
-        facultyId: req.params.id,
-      },
-    });
-    res.status(200).send(form);
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
-
-facultyFormRouter.delete("/:id", async (req, res) => {
-  try {
-    const deleted = await facultyForm.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (deleted) {
-      res.status(200).send({ msg: "form deleted successfully" });
-    } else {
-      res.status(400).send({ msg: "error in deleting form" });
-    }
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
+// facultyForm.sync({ alter: true });
+// facultyForm.belongsTo(facultyRegistration, {
+//   foreignKey: "facultyId",
+//   targetKey: "id",
+//   as: "faculty",
+//   onDelete: "CASCADE",
+//   onUpdate: "CASCADE",
+// });
