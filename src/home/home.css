@@ -1,0 +1,18 @@
+.cc {
+  color: #fff;
+  z-index: 1;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  position: relative;
+  top: 80px;
+  background-color: #b5aef76e !important;
+}
+.foot {
+  position: relative;
+  top: cal(170vh-60vh) !important;
+}
+.nav-link {
+  color: #fff !important;
+}
+.active {
+  background-color: #8f8cac00 !important;
+}

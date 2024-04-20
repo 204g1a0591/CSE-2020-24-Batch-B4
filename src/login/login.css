@@ -1,0 +1,84 @@
+.bigc{
+  background-size: cover;
+  background-image: url("https://th.bing.com/th/id/R.c64e4b0cc969cdb80ff40b002f475f70?rik=ycQEteukBTGUiQ&riu=http%3a%2f%2fwww.vidyavision.com%2fCollegeUploads%2fPhotos%2f2016-20-6-12-07-13_srit1.jpg&ehk=UG7j%2bGXXXXfwDp2BdmVvyHswpPiT9VcwO8U6AihrxQE%3d&risl=&pid=ImgRaw&r=0");/* Replace with your image URL */
+  background-position: center;
+  height: 100vh;
+  display: flex;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 145px;
+  background-color: rgba(255, 85, 0, 0.965);
+  padding-bottom: 10px;
+  width: 400px;
+  border-radius: 20px;
+  align-self: center;
+}
+.header{
+font-style: italic;
+font-family: 'Times New Roman', Times, serif;
+display: flex;
+flex: auto;
+margin: auto;
+padding: 0px;
+flex-direction:column;
+}
+.text{
+  color: rgb(0, 0, 0);
+  font-size: 48px;
+}
+.underline{
+  background: orange;
+  width:60px;
+  height:3px;
+  align-self: center;
+}
+.inputs{
+  margin: auto;
+  padding: 5px;
+  flex-direction: column;
+  display: flex;
+  gap: 15px;
+}
+.input{
+  background-color: rgb(255, 236, 162);
+  padding: 10px;
+  
+}
+
+.input input{
+  margin-left: 10px;
+  font-size: 19px;
+}
+.forgotpassword{
+  margin-top: 7px;
+  font-size: 15px;
+  margin-left: 17px;
+}
+.forgotpassword span{
+  color: rgb(12, 12, 161);
+  font-weight: 500;
+  font-style: oblique;
+  cursor: pointer;
+}
+.submitcontainer{
+  display: flex;
+  gap: 50px;
+  margin: 20px auto;
+}
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:black;
+  border-radius: 50px;
+  font-size: 19px;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  font-weight: 600;
+  background-color: rgb(255, 236, 162);
+}
+
